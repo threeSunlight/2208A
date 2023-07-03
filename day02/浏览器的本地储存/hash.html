@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="#/a">A页面</a>
+    <a href="#/b?name='nin'">B页面</a>
+    <div id="app"></div>
+  </body>
+</html>
+<script>
+  function render() {
+    // alert(1)
+    const app = document.querySelector("#app");
+    console.log(window.location,'window.location');
+    app.innerHTML = window.location.hash;
+  }
+
+  // element.addEventListener(event, function, useCapture);
+  // 第一个参数是事件的类型（如“ click”或“ mousedown”）。
+  // 第二个参数是我们想要在事件发生时调用的函数。
+  // 第三个参数是一个布尔值，指定是使用事件冒泡还是事件捕获。此参数是可选的。
+  window.addEventListener("hashchange", render);
+</script>
